@@ -13,6 +13,7 @@ export default class App extends Component {
       .then(
         result => {
           console.log(result);
+          console.log(result.list);
         }
       ).catch(e => console.log("there's a error", e))
   }
