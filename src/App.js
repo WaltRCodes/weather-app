@@ -18,6 +18,8 @@ export default class App extends Component {
           console.log(result.list[0]);
 
           console.log(result.list[0].dt_txt);
+          console.log(result.list[0].weather[0].description);
+          console.log(result.list[0].main.temp);
 
         }
       ).catch(e => console.log("there's a error", e))
