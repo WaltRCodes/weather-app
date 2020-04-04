@@ -6,6 +6,7 @@ export default class App extends Component {
   constructor(props) {
     super(props);
 
+    this.kelvinToFahrenheit= this.kelvinToFahrenheit.bind(this);
   }
   componentDidMount() {
     fetch("http://api.openweathermap.org/data/2.5/forecast?id=5128638&appid="+env.key)
@@ -17,6 +18,13 @@ export default class App extends Component {
         }
       ).catch(e => console.log("there's a error", e))
   }
+
+  kelvinToFahrenheit(temp) {
+    let  Fahrenheit = temp - 273.15;
+    Fahrenheit = Fahrenheit * 9/5 + 32;
+    return Fahrenheit;
+  }
+
   
   render (){
     
