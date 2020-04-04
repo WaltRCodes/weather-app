@@ -15,6 +15,10 @@ export default class App extends Component {
         result => {
           console.log(result);
           console.log(result.list);
+          console.log(result.list[0]);
+
+          console.log(result.list[0].dt_txt);
+
         }
       ).catch(e => console.log("there's a error", e))
   }
