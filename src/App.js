@@ -7,12 +7,12 @@ export default class App extends Component {
     super(props);
 
     this.state = {
-      weather: {
+      weather: [{
         date:'',
         description:'',
         current: '',
         min:''
-      }
+      }]
     }
     this.kelvinToFahrenheit= this.kelvinToFahrenheit.bind(this);
   }
@@ -47,9 +47,9 @@ export default class App extends Component {
             };
             weatherArray.push(newWeatherObject);
           }
-          
-          this.setState({weather: newWeatherObject});
-
+          console.log(weatherArray[0].date);
+          this.setState({weather: weatherArray});
+          console.log(this.state.weather);
         }
       ).catch(e => console.log("there's a error", e))
   }
@@ -61,10 +61,10 @@ export default class App extends Component {
     
     return (
       <div className="App">
-        <div>{this.state.weather.date}</div>
-        <div>{this.state.weather.description}</div>
-        <div>{this.state.weather.current}</div>
-        <div>{this.state.weather.min}</div>
+        <div>{this.state.weather[0].date}</div>
+        <div>{this.state.weather[0].description}</div>
+        <div>{this.state.weather[0].current}</div>
+        <div>{this.state.weather[0].min}</div>
       </div>
     )
   }
