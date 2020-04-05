@@ -9,7 +9,9 @@ export default class App extends Component {
     this.state = {
       weather: {
         date:'',
-        description:''
+        description:'',
+        current: '',
+        min:''
       }
     }
     this.kelvinToFahrenheit= this.kelvinToFahrenheit.bind(this);
