@@ -36,12 +36,18 @@ export default class App extends Component {
           console.log(this.kelvinToFahrenheit(result.list[0].main.temp).toFixed(2));
           console.log(this.kelvinToFahrenheit(result.list[0].main.feels_like).toFixed(2));
           console.log(this.kelvinToFahrenheit(result.list[0].main.temp_min).toFixed(2));
-          let newWeatherObject = {
-            date: result.list[0].dt_txt,
-            description: result.list[0].weather[0].description,
-            current: this.kelvinToFahrenheit(result.list[0].main.temp).toFixed(2),
-            min: this.kelvinToFahrenheit(result.list[0].main.temp_min).toFixed(2)
-          };
+          let weatherArray=[];
+          let newWeatherObject;
+          for(let i =0;i<7;i++){
+            newWeatherObject = {
+              date: result.list[i].dt_txt,
+              description: result.list[i].weather[0].description,
+              current: this.kelvinToFahrenheit(result.list[i].main.temp).toFixed(2),
+              min: this.kelvinToFahrenheit(result.list[i].main.temp_min).toFixed(2)
+            };
+            weatherArray.push(newWeatherObject);
+          }
+          
           this.setState({weather: newWeatherObject});
 
         }
@@ -55,7 +61,10 @@ export default class App extends Component {
     
     return (
       <div className="App">
-        
+        <div>{this.state.weather.date}</div>
+        <div>{this.state.weather.description}</div>
+        <div>{this.state.weather.current}</div>
+        <div>{this.state.weather.min}</div>
       </div>
     )
   }
