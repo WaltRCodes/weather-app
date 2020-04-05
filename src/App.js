@@ -36,6 +36,13 @@ export default class App extends Component {
           console.log(this.kelvinToFahrenheit(result.list[0].main.temp).toFixed(2));
           console.log(this.kelvinToFahrenheit(result.list[0].main.feels_like).toFixed(2));
           console.log(this.kelvinToFahrenheit(result.list[0].main.temp_min).toFixed(2));
+          let newWeatherObject = {
+            date: result.list[0].dt_txt,
+            description: result.list[0].weather[0].description,
+            current: this.kelvinToFahrenheit(result.list[0].main.temp).toFixed(2),
+            min: this.kelvinToFahrenheit(result.list[0].main.temp_min).toFixed(2)
+          };
+          this.setState({weather: newWeatherObject});
 
         }
       ).catch(e => console.log("there's a error", e))
