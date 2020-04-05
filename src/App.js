@@ -29,8 +29,8 @@ export default class App extends Component {
           console.log(result.list[0].weather[0].description);
           //https://www.w3schools.com/jsref/jsref_tofixed.asp
           console.log(this.kelvinToFahrenheit(result.list[0].main.temp).toFixed(2));
-          console.log(result.list[0].main.feels_like);
-          console.log(result.list[0].main.temp_min);
+          console.log(this.kelvinToFahrenheit(result.list[0].main.feels_like).toFixed(2));
+          console.log(this.kelvinToFahrenheit(result.list[0].main.temp_min).toFixed(2));
 
         }
       ).catch(e => console.log("there's a error", e))
