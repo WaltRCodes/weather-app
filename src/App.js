@@ -61,10 +61,13 @@ export default class App extends Component {
     
     return (
       <div className="App">
-        <div>{this.state.weather[0].date}</div>
-        <div>{this.state.weather[0].description}</div>
-        <div>{this.state.weather[0].current}</div>
-        <div>{this.state.weather[0].min}</div>
+        <BrowserRouter>
+          <div>{this.state.weather[0].date}</div>
+          <div>{this.state.weather[0].description}</div>
+          <div>{this.state.weather[0].current}</div>
+          <div>{this.state.weather[0].min}</div>
+          <Link to={"/monday?date="+this.state.weather[0].date}>Monday</Link>
+        </BrowserRouter>
       </div>
     )
   }
