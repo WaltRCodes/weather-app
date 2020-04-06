@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {env} from './components/env';
 import './App.css';
-
+import {BrowserRouter, Switch, Route, Link, useParams} from "react-router-dom";
 export default class App extends Component {
   constructor(props) {
     super(props);
