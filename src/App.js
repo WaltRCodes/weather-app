@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {env} from './components/env';
 import './App.css';
 import {BrowserRouter, Switch, Route, Link, useParams} from "react-router-dom";
+import Monday from './components/Monday';
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -67,6 +68,7 @@ export default class App extends Component {
           <div>{this.state.weather[0].current}</div>
           <div>{this.state.weather[0].min}</div>
           <Link to={"/monday?date="+this.state.weather[0].date}>Monday</Link>
+          <Route path="/monday" component={Monday} />
         </BrowserRouter>
       </div>
     )
