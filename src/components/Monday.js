@@ -1,5 +1,6 @@
 import React from 'react';
 import {useLocation, useParams} from "react-router-dom";
+import Cloudy from '../images/cloudy.png';
 function Monday() {
     let params = new URLSearchParams(useLocation().search);
     let date = params.get("date");
