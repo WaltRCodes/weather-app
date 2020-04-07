@@ -11,7 +11,15 @@ function Friday() {
     let description = params.get("description");
     let current = params.get("current");
     let min = params.get("min");
-     
+     //substring check: https://stackoverflow.com/questions/1789945/how-to-check-whether-a-string-contains-a-substring-in-javascript
+    let image = sunny;
+    if(description.substring('cloud')){
+        image = cloudy;
+    } else if (description.substring('rain')){
+        image = rainy;
+    } else if (description.substring('snow')){
+        image = snowy;
+    } 
 return (
     <div>
         <p>Friday</p>
