@@ -1,12 +1,14 @@
 import React from 'react';
 import {useLocation, useParams} from "react-router-dom";
 function Monday() {
-    var params = new URLSearchParams(useLocation().search);
-    var date = params.get("date");
+    let params = new URLSearchParams(useLocation().search);
+    let date = params.get("date");
+    let description = params.get("description");
 return (
     <div>
         <p>Monday</p>
         <p>{date}</p>
+        <p>{description}</p>
     </div>
 
 );
