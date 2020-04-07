@@ -10,14 +10,16 @@ import Friday from './components/Friday';
 export default class App extends Component {
   constructor(props) {
     super(props);
-
+    let array = new Array(5);
+    let weatherObject = {
+      date:'',
+      description:'',
+      current: '',
+      min:''
+    };
+    array.fill(weatherObject);
     this.state = {
-      weather: [{
-        date:'',
-        description:'',
-        current: '',
-        min:''
-      }]
+      weather: array
     }
     this.kelvinToFahrenheit= this.kelvinToFahrenheit.bind(this);
   }
@@ -43,12 +45,12 @@ export default class App extends Component {
           console.log(this.kelvinToFahrenheit(result.list[0].main.temp_min).toFixed(2));
           let weatherArray=[];
           let newWeatherObject;
-          for(let i =0;i<7;i++){
+          for(let i =0;i<6;i++){
             newWeatherObject = {
-              date: result.list[i].dt_txt,
-              description: result.list[i].weather[0].description,
-              current: this.kelvinToFahrenheit(result.list[i].main.temp).toFixed(2),
-              min: this.kelvinToFahrenheit(result.list[i].main.temp_min).toFixed(2)
+              date: result.list[i+6].dt_txt,
+              description: result.list[i+6].weather[0].description,
+              current: this.kelvinToFahrenheit(result.list[i+6].main.temp).toFixed(2),
+              min: this.kelvinToFahrenheit(result.list[i+6].main.temp_min).toFixed(2)
             };
             weatherArray.push(newWeatherObject);
           }
@@ -69,6 +71,14 @@ export default class App extends Component {
         <BrowserRouter>
           <Link to={"/monday?date="+this.state.weather[0].date+"&description="+this.state.weather[0].description+"&current="+this.state.weather[0].current+"&min="+this.state.weather[0].min}>Monday</Link>
           <Route path="/monday" component={Monday} />
+           | 
+          <Link to={"/tuesday?date="+this.state.weather[1].date+"&description="+this.state.weather[1].description+"&current="+this.state.weather[1].current+"&min="+this.state.weather[1].min}>Tuesday</Link>
+          <Route path="/tuesday" component={Tuesday} />
+          | 
+
+          | 
+
+          | 
         </BrowserRouter>
       </div>
     )
