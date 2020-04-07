@@ -10,6 +10,7 @@ return (
         <p>Monday</p>
         <p>{date}</p>
         <p>{description}</p>
+        <p>{current}</p>
     </div>
 
 );
