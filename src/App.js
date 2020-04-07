@@ -3,6 +3,10 @@ import {env} from './components/env';
 import './App.css';
 import {BrowserRouter, Switch, Route, Link, useParams} from "react-router-dom";
 import Monday from './components/Monday';
+import Tuesday from './components/Tuesday';
+import Wednesday from './components/Wednesday';
+import Thursday from './components/Thursday';
+import Friday from './components/Friday';
 export default class App extends Component {
   constructor(props) {
     super(props);
