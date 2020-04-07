@@ -6,6 +6,11 @@ import snowy from './images/snowy.png';
 import {useLocation} from "react-router-dom";
 
 function Wednesday() {
+    let params = new URLSearchParams(useLocation().search);
+    let date = params.get("date");
+    let description = params.get("description");
+    let current = params.get("current");
+    let min = params.get("min");
 return (
     <div>
         <p>Wednesday</p>
