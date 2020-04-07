@@ -24,8 +24,7 @@ return (
         <p>Monday</p>
         <p>{date}</p>
         <p><img src={image}/></p>
-        <p>{current}</p>
-        <p>{min}</p>
+        <p>{current} {min}</p>
     </div>
 
 );
