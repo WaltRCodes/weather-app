@@ -23,7 +23,6 @@ function Friday() {
 return (
     <div>
         <p>Friday</p>
-        <p>{date}</p>
         <p><img src={image}/></p>
         <p>{current} {min}</p>
     </div>
