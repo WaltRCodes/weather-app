@@ -24,6 +24,9 @@ function Tuesday() {
 return (
     <div>
         <p>Tuesday</p>
+        <p>{date}</p>
+        <p><img src={image}/></p>
+        <p>{current} {min}</p>
     </div>
 
 );
