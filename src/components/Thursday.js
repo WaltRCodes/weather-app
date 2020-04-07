@@ -4,3 +4,14 @@ import rainy from './images/rainy.png';
 import sunny from './images/sunny.png';
 import snowy from './images/snowy.png';
 import {useLocation} from "react-router-dom";
+
+function Thursday() {
+return (
+    <div>
+        <p>Thursday</p>
+    </div>
+
+);
+  }
+
+export default Thursday;
