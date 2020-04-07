@@ -5,7 +5,8 @@ function Monday() {
     var date = params.get("date");
 return (
     <div>
-        <p>Monday {date}</p>
+        <p>Monday</p>
+        <p>{date}</p>
     </div>
 
 );
