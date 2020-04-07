@@ -75,10 +75,14 @@ export default class App extends Component {
           <Link to={"/tuesday?date="+this.state.weather[1].date+"&description="+this.state.weather[1].description+"&current="+this.state.weather[1].current+"&min="+this.state.weather[1].min}>Tuesday</Link>
           <Route path="/tuesday" component={Tuesday} />
           | 
-
+          <Link to={"/wednesday?date="+this.state.weather[2].date+"&description="+this.state.weather[2].description+"&current="+this.state.weather[2].current+"&min="+this.state.weather[2].min}>Wednesday</Link>
+          <Route path="/wednesday" component={Wednesday} />
           | 
-
+          <Link to={"/thursday?date="+this.state.weather[3].date+"&description="+this.state.weather[3].description+"&current="+this.state.weather[3].current+"&min="+this.state.weather[3].min}>Thursday</Link>
+          <Route path="/thursday" component={Thursday} />
           | 
+          <Link to={"/friday?date="+this.state.weather[4].date+"&description="+this.state.weather[4].description+"&current="+this.state.weather[4].current+"&min="+this.state.weather[4].min}>Friday</Link>
+          <Route path="/friday" component={Friday} />
         </BrowserRouter>
       </div>
     )
