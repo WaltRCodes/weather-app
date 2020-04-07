@@ -63,10 +63,6 @@ export default class App extends Component {
     return (
       <div className="App">
         <BrowserRouter>
-          <div>{this.state.weather[0].date}</div>
-          <div>{this.state.weather[0].description}</div>
-          <div>{this.state.weather[0].current}</div>
-          <div>{this.state.weather[0].min}</div>
           <Link to={"/monday?date="+this.state.weather[0].date+"&description="+this.state.weather[0].description+"&current="+this.state.weather[0].current+"&min="+this.state.weather[0].min}>Monday</Link>
           <Route path="/monday" component={Monday} />
         </BrowserRouter>
